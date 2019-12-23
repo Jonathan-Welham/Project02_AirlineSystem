@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project02">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_plane"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_plane_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".AddFlight"
+            android:parentActivityName=".AdminPage"></activity>
+        <activity
+            android:name=".UserInfoLog"
+            android:parentActivityName=".AdminPage" />
+        <activity
+            android:name=".FlightDataLog"
+            android:parentActivityName=".AdminPage" />
+        <activity
+            android:name=".UserDataLog"
+            android:parentActivityName=".AdminPage" />
+        <activity
+            android:name=".AdminPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".UserFlight"
+            android:parentActivityName=".ReserveSeat" />
+        <activity
+            android:name=".ManageSystem"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ReserveSeat"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoginPage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CancelReservation"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CreateAccount"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

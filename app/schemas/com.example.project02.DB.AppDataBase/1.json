@@ -1,0 +1,175 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7922b1c3fb5801a0c5ed1f4269d72813",
+    "entities": [
+      {
+        "tableName": "User",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mLogId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `username` TEXT, `mDate` INTEGER, `password` TEXT, `admin` INTEGER NOT NULL, `loggedIn` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mLogId",
+            "columnName": "mLogId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDate",
+            "columnName": "mDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "admin",
+            "columnName": "admin",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "loggedIn",
+            "columnName": "loggedIn",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mLogId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Flight",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mLogId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `flightNo` TEXT, `mDate` INTEGER, `departure` TEXT, `arrival` TEXT, `departureTime` TEXT, `price` REAL, `tickets` INTEGER NOT NULL, `reservationNo` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mLogId",
+            "columnName": "mLogId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "flightNo",
+            "columnName": "flightNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mDate",
+            "columnName": "mDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "departure",
+            "columnName": "departure",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "arrival",
+            "columnName": "arrival",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "departureTime",
+            "columnName": "departureTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tickets",
+            "columnName": "tickets",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reservationNo",
+            "columnName": "reservationNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mLogId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "UserInfo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mLogId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `user` TEXT, `flight` TEXT, `tickets` INTEGER NOT NULL, `reservationNo` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "mLogId",
+            "columnName": "mLogId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user",
+            "columnName": "user",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "flight",
+            "columnName": "flight",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tickets",
+            "columnName": "tickets",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reservationNo",
+            "columnName": "reservationNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mLogId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"7922b1c3fb5801a0c5ed1f4269d72813\")"
+    ]
+  }
+}
